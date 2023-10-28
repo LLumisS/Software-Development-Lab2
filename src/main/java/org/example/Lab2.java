@@ -12,20 +12,15 @@ public class Lab2 {
 
         float[][] matrix = matrixInput(scanner);
 
-        System.out.print("\n");
-        System.out.println("Random matrix:");
+        System.out.println("\nRandom matrix:");
         show(matrix);
-        System.out.print("\n");
 
         matrix = multiInput(scanner, matrix);
 
-        System.out.print("\n");
-        System.out.println("Multiplied matrix:");
+        System.out.println("\nMultiplied matrix:");
         show(matrix);
 
-        System.out.print("\n");
         System.out.println("Sum: " + getSum(matrix) + "\n");
-
         scanner.close();
     }
 
@@ -85,6 +80,7 @@ public class Lab2 {
             }
             System.out.print("\n");
         }
+        System.out.print("\n");
     }
 
     private static float[][] multiMatrix(float[][] matrix, float multiplier) {
