@@ -10,7 +10,26 @@ public class Lab2 {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
 
-        float[][] matrix;
+        float[][] matrix = matrixInput(scanner);
+
+        System.out.print("\n");
+        System.out.println("Random matrix:");
+        show(matrix);
+        System.out.print("\n");
+
+        matrix = multiInput(scanner, matrix);
+
+        System.out.print("\n");
+        System.out.println("Multiplied matrix:");
+        show(matrix);
+
+        System.out.print("\n");
+        System.out.println("Sum: " + getSum(matrix) + "\n");
+
+        scanner.close();
+    }
+
+    private static float[][] matrixInput(Scanner scanner) {
         while(true) {
             try {
                 System.out.println("Enter matrix size:");
@@ -21,19 +40,15 @@ public class Lab2 {
                 System.out.print("y = ");
                 int y = scanner.nextInt();
 
-                matrix = randomMatrix(x, y);
-                break;
+                return randomMatrix(x, y);
             } catch (Exception e) {
                 System.err.println("Error: Input Mismatch.\n");
                 scanner.nextLine();
             }
         }
+    }
 
-        System.out.print("\n");
-        System.out.println("Random matrix:");
-        show(matrix);
-        System.out.print("\n");
-
+    private static float[][] multiInput(Scanner scanner, float[][] matrix) {
         while(true) {
             try {
                 System.out.println("Enter matrix multiplier:");
@@ -41,22 +56,12 @@ public class Lab2 {
                 System.out.print("multiplier = ");
                 float multiplier = scanner.nextFloat();
 
-                matrix = multiMatrix(matrix, multiplier);
-                break;
+                return multiMatrix(matrix, multiplier);
             } catch (Exception e) {
                 System.err.println("Error: Input Mismatch.\n");
                 scanner.nextLine();
             }
         }
-
-        System.out.print("\n");
-        System.out.println("Multiplied matrix:");
-        show(matrix);
-
-        System.out.print("\n");
-        System.out.println("Sum: " + getSum(matrix) + "\n");
-
-        scanner.close();
     }
 
     private static float[][] randomMatrix(int x, int y) {
