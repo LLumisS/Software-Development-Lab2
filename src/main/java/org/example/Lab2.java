@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class Matrix {
+public class Lab2 {
     public void getResult() {
         Scanner scanner = new Scanner(System.in);
         scanner.useLocale(Locale.US);
